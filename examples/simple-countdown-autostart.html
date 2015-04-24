@@ -14,12 +14,14 @@
 
 			$(document).ready(function() {
 
-				// Instantiate a counter
-				clock = new FlipClock($('.clock'), 10, {
-					clockFace: 'Counter',
-					autoStart: true,
-					countdown: true
-				});
+			var date  = new Date(Date.UTC(2013, 8, 30, 12, 0, 0));
+var now   = new Date();
+var diff  = date.getTime()/1000 - now.getTime()/1000;
+
+var clock = $('.clock').FlipClip(diff, { // <-- DID YOU MEAN FlipClock
+    clockFace: 'DailyCounter',
+    countdown: true
+});
 				
 			});
 		</script>
